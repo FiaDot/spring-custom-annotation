@@ -1,4 +1,6 @@
-package com.fullstackstarter.SpringCustomAnnotation;
+package com.fullstackstarter.SpringCustomAnnotation.aop;
+
+
 
 
 import org.slf4j.Logger;
@@ -15,7 +17,7 @@ public class CheckLoginAspect {
 	
 	private static final Logger logger = LoggerFactory.getLogger(CheckLoginAspect.class);
 	
-	@Around(value="@annotation(com.fullstackstarter.SpringCustomAnnotation.CheckLogin)")
+	@Around(value="@annotation(com.fullstackstarter.SpringCustomAnnotation.annotation.CheckLogin)")
 	public Object CheckLogin(ProceedingJoinPoint pjp) throws Throwable {
 		logger.warn("check login");
 		Object ret = pjp.proceed();
